@@ -115,7 +115,7 @@ EXTRA_IMAGE_FEATURES += "debug-tweaks"
 # you need qt widget support, you can enable it with this line
 #DISTRO_FEATURES_append = " qtwidgets"
 
-CONF_VERSION = "1"
+CONF_VERSION = "2"
 
 # Uncomment to accept NXP EULA
 # EULA can be found under ../sources/meta-freescale/EULA

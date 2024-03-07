@@ -19,7 +19,8 @@ INSTALL_DIR = "${D}${datadir}/${PN}"
 
 inherit systemd
 
-SYSTEMD_SERVICE_${PN} = "demo-celebrity-face-match.service"
+SYSTEMD_SERVICE:${PN} = "demo-celebrity-face-match.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "enable" 
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
@@ -33,7 +34,7 @@ do_install() {
     done
 }
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     demo-celebrity-face-match-data \
     opencv \
     python3 \
@@ -43,7 +44,7 @@ RDEPENDS_${PN} += " \
     gstreamer1.0-plugins-good \
 "
 
-FILES_${PN} = " \
+FILESi:${PN} = " \
     ${datadir}/${PN} \
     ${systemd_system_unitdir}/* \
 "
